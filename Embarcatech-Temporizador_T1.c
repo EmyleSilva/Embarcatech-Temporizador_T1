@@ -6,7 +6,7 @@
 #define led_g 11
 #define led_b 12
 
-const uint8_t pins[] = {led_r, led_g, led_b};
+const uint8_t pins[] = {led_r, led_b, led_g};
 uint8_t counter = 0;
 
 int leds_states[3][3] = {
@@ -37,9 +37,9 @@ bool repeating_timer_callback(struct repeating_timer *t)
 {
 
     turn_leds_on();
-
+    printf("\nPassou 3 segundos\n");
+    
     counter = ++counter > 2 ? 0 : counter;
-    printf("Passou %d segundo(s)\n", counter);
     return true;
 }
 
